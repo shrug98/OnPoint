@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang = en>
+<head>
+    <meta charset= "utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sport &amp; Activities Selection</title>
+    <link rel="stylesheet" type="text/css" href="AutoScheduler_CSS.css">
+    <style>
+        .formBox{
+            padding: 0.5rem 2rem;
+        }
+           .msg {
+               color: white;
+           }
+    </style>
+    <script>
+        let data = [];
+        // example {id:1592304983049, title: 'Deadpool', year: 2015}
+        const addName = (ev)=>{
+            ev.preventDefault();  //to stop the form submitting
+            var checkboxes = document.querySelectorAll('input[type=checkbox]:checked');
+            var arr = [];
+             for(var j = 0; j < checkboxes.length; j++) {
+                 arr.push(checkboxes[j].value); 
+                 alert(checkboxes[j].value); 
+            }
+            let info = {
+                //id: Date.now(),
+               // ClassName: document.getElementById('className').value,
+                Days : arr
+                //StartTime: document.getElementById('startTime').value,
+                //EndTime: document.getElementById('endTime').value
+               
+                
+                
+            }
+            data.push(info);
+            document.forms[0].reset(); // to clear the form for the next entries
+            //document.querySelector('form').reset();
+
+            //for display purposes only
+            console.warn('added' , {data} );
+            let pre = document.querySelector('#msg pre');
+            pre.textContent = '\n' + JSON.stringify(data, '\t', 2);
+
+            //saving to localStorage
+            localStorage.setItem('MyActivitiesSchedule', JSON.stringify(data) );
+        }
+        document.addEventListener('DOMContentLoaded', ()=>{
+            document.getElementById('btn').addEventListener('click', addName);
+        });
+    </script> 
+</head>
+    
+    <body>
+        <h1>Activities Selection:</h1>
+        <div class="topnav">
+            <a class="Home" href="AutoScheduler_Home.html">Home</a>
+            <a href="Classes_Selection.html">Classes</a>
+            <a href="Clubs_Selection.html">Activities</a>
+            <a href="Events_Selection.html">Events</a>
+            <a href="Schedule.html">Schedule</a>
+        </div>
+        
+        <br/>
+        <center><h2>Select Activities Attending:</h2></center>        
+        
+        <center><form>
+            <div class= "multiselect">
+                <div class = "selectBox" onclick = "showCheckboxes()">
+                    <select>
+                        <option> Select Activities Attending </option>
+                    </select>
+                    
+                    <div class = "overSelect">
+                    </div>
+                </div>
+                
+            <div id = "checkboxes" align= "left">
+            <div class="formBox">
+                <label for="1"><input type="checkbox" id="A.V. Crew"/>A.V. Crew</label>
+                <label for="2"><input type="checkbox" id="Aboriginal Awareness Day"/>Aboriginal Awareness Day</label>
+                <label for="3"><input type="checkbox" id="Alpine Ski"/>Alpine Ski</label>
+                <label for="4"><input type="checkbox" id="Activities Fair"/>Activities Fair</label>
+                <label for="5"><input type="checkbox" id="Animé Club"/>Animé Club</label>
+                <label for="6"><input type="checkbox" id="Arts Club"/>Arts Club</label>
+                <label for="7"><input type="checkbox" id="Asian Heritage Club"/>Asian Heritage Club</label>
+                <label for="8"><input type="checkbox" id="Assessment and Evaluation Committee"/>Assessment and Evaluation Committee</label>
+                <label for="9"><input type="checkbox" id="Athletic Council and Director"/>Athletic Council and Director</label>
+                <label for="10"><input type="checkbox" id="Athletic Leadership Camp"/>Athletic Leadership Camp</label>
+                <label for="11"><input type="checkbox" id="Awards Committee"/>Awards Committee</label>
+                <label for="12"><input type="checkbox" id="Badminton Team Jr."/>Badminton Team Jr.</label>
+                <label for="13"><input type="checkbox" id="Badminton Team Sr."/>Badminton Team Sr.</label>
+                <label for="14"><input type="checkbox" id="Baseball"/>Baseball</label>
+                <label for="15"><input type="checkbox" id="Basketball – Junior Boys"/>Basketball – Junior Boys</label>
+                <label for="16"><input type="checkbox" id="Basketball – Sr. Boys"/>Basketball – Sr. Boys</label>
+                <label for="17"><input type="checkbox" id="Basketball – Junior Girls"/>Basketball – Junior Girls</label>
+                <label for="18"><input type="checkbox" id="Black History Month"/>Black History Month</label>
+                <label for="19"><input type="checkbox" id="Breakfast Club"/>Breakfast Club</label>
+                <label for="20"><input type="checkbox" id="Bucket Drumming"/>Bucket Drumming</label>
+                <label for="21"><input type="checkbox" id="Character Reception"/>Character Reception</label>
+                <label for="22"><input type="checkbox" id="Chess Club"/>Chess Club</label>
+                <label for="23"><input type="checkbox" id="Christian Fellowship (Lifeline)"/>Christian Fellowship (Lifeline)</label>
+                <label for="24"><input type="checkbox" id="Climate for Learning and Working Committee"/>Climate for Learning and Working Committee</label>
+                <label for="25"><input type="checkbox" id="Coffee House"/>Coffee House</label>
+                <label for="26"><input type="checkbox" id="Commencement Committee"/>Commencement Committee</label>
+                <label for="27"><input type="checkbox" id="Computer Science Club"/>Computer Science Club</label>
+                <label for="28"><input type="checkbox" id="Concert Band"/>Concert Band</label>
+                <label for="29"><input type="checkbox" id="COY"/>COY</label>
+                <label for="30"><input type="checkbox" id="Cricket Club Team"/>Cricket Club Team</label>
+                <label for="31"><input type="checkbox" id="Cross Country"/>Cross Country</label>
+                <label for="32"><input type="checkbox" id="DECA"/>DECA</label>
+                <label for="33"><input type="checkbox" id="Documentary Club"/>Documentary Club</label>
+                <label for="34"><input type="checkbox" id="Drama Club"/>Drama Club</label>
+                <label for="35"><input type="checkbox" id="Eco-School Committee"/>Eco-School Committee</label>
+                <label for="36"><input type="checkbox" id="Education Week"/>Education Week</label>
+                <label for="37"><input type="checkbox" id="Emerging Leaders"/>Emerging Leaders</label>
+                <label for="38"><input type="checkbox" id="Film Club"/>Film Club</label>
+                <label for="39"><input type="checkbox" id="Floor Hockey"/>Floor Hockey</label>
+                <label for="40"><input type="checkbox" id="Ford Grad Character Award Committee"/>Ford Grad Character Award Committee</label>
+                <label for="41"><input type="checkbox" id="Free 2 Be / Day of Pink"/>Free 2 Be / Day of Pink</label>
+                <label for="42"><input type="checkbox" id="Gardening Club"/>Gardening Club</label>
+                <label for="43"><input type="checkbox" id="Girls Fit Spirit"/>Girls Fit Spirit</label>
+                <label for="44"><input type="checkbox" id="Girls Flag Football"/>Girls Flag Football</label>
+                <label for="45"><input type="checkbox" id="Golf Team"/>Golf Team</label>
+                <label for="46"><input type="checkbox" id="Grammar Group"/>Grammar Group</label>
+                <label for="47"><input type="checkbox" id="Healthy Foods"/>Healthy Foods</label>
+                <label for="48"><input type="checkbox" id="Hockey – Boys"/>Hockey – Boys</label>
+                <label for="49"><input type="checkbox" id="Hockey – Girls"/>Hockey – Girls</label>
+                <label for="50"><input type="checkbox" id="HOSA"/>HOSA</label>
+                <label for="51"><input type="checkbox" id="IB Steering Committee"/>IB Steering Committee</label>
+                <label for="52"><input type="checkbox" id="Innovation Committee"/>Innovation Committee</label>
+                <label for="53"><input type="checkbox" id="Interact"/>Interact</label>
+                <label for="54"><input type="checkbox" id="Jazz Band"/>Jazz Band</label>
+                <label for="55"><input type="checkbox" id="Leaders in Library"/>Leaders in Library</label>
+                <label for="56"><input type="checkbox" id="Link Crew"/>Link Crew</label>
+                <label for="57"><input type="checkbox" id="Literacy Committee"/>Literacy Committee</label>
+                <label for="58"><input type="checkbox" id="Literacy – PLC Team"/>Literacy – PLC Team</label>
+                <label for="59"><input type="checkbox" id="Math Contest Prep"/>Math Contest Prep</label>
+                <label for="60"><input type="checkbox" id="Math Extra Help Club"/>Math Extra Help Club</label>
+                <label for="61"><input type="checkbox" id="Math Senior Scholars"/>Math Senior Scholars</label>
+                <label for="62"><input type="checkbox" id="Mental Health"/>Mental Health</label>
+                <label for="63"><input type="checkbox" id="Mock Trial Team"/>Mock Trial Team</label>
+                <label for="64"><input type="checkbox" id="Multi-cultural Club"/>Multi-cultural Club</label>
+                <label for="65"><input type="checkbox" id="Music Council"/>Music Council</label>
+                <label for="66"><input type="checkbox" id="Muslim Students Association"/>Muslim Students Association</label>
+                <label for="67"><input type="checkbox" id="OFSAA Transfer Rep"/>OFSAA Transfer Rep</label>
+                <label for="68"><input type="checkbox" id="OSAID / MADD"/>OSAID / MADD</label>
+                <label for="69"><input type="checkbox" id="Parent Teacher Interview"/>Parent Teacher Interview</label>
+                <label for="70"><input type="checkbox" id="Peer Coaches"/>Peer Coaches</label>
+                <label for="71"><input type="checkbox" id="Ping Pong (Table Tennis)"/>Ping Pong (Table Tennis)</label>
+                <label for="72"><input type="checkbox" id="Project Santa"/>Project Santa</label>
+                <label for="73"><input type="checkbox" id="Prom"/>Prom</label>
+                <label for="74"><input type="checkbox" id="Red Cross- Anti Bullying"/>Red Cross- Anti Bullying</label>
+                <label for="75"><input type="checkbox" id="Remembrance Day"/>Remembrance Day</label>
+                <label for="76"><input type="checkbox" id="Retirement Committee"/>Retirement Committee</label>
+                <label for="78"><input type="checkbox" id="ROPSSA"/>ROPSSA</label>
+                <label for="79"><input type="checkbox" id="Rugby Girls"/>Rugby Girls</label>
+                <label for="80"><input type="checkbox" id="S.A.A.C. Staff Allocation Advisory Committee"/>S.A.A.C. Staff Allocation Advisory Committee</label>
+                <label for="81"><input type="checkbox" id="S.A.C."/>S.A.C.</label>
+                <label for="82"><input type="checkbox" id="School Food & Beverage"/>School Food &amp; Beverage</label>
+                <label for="83"><input type="checkbox" id="School Reach"/>School Reach</label>
+                <label for="84"><input type="checkbox" id="Science Sr. Scholars"/>Science Sr. Scholars</label>
+                <label for="85"><input type="checkbox" id="Ski Trip"/>Ski Trip</label>
+                <label for="86"><input type="checkbox" id="Skills Club"/>Skills Club</label>
+                <label for="87"><input type="checkbox" id="Slow Pitch Girls"/>Slow Pitch Girls</label>
+                <label for="88"><input type="checkbox" id="Soccer, Senior Boys"/>Soccer, Senior Boys</label>
+                <label for="89"><input type="checkbox" id="Soccer, Senior Girls"/>Soccer, Senior Girls</label>
+                <label for="90"><input type="checkbox" id="Staff Social Committee"/>Staff Social Committee</label>
+                <label for="91"><input type="checkbox" id="STPDL"/>STPDL</label>
+                <label for="92"><input type="checkbox" id="Strength & Conditioning"/>Strength &amp; Conditioning</label>
+                <label for="93"><input type="checkbox" id="Tennis Team – Jr."/>Tennis Team – Jr.</label>
+                <label for="94"><input type="checkbox" id="Tennis Team – Sr."/>Tennis Team – Sr.</label>
+                <label for="95"><input type="checkbox" id="Track & Field"/>Track &amp; Field</label>
+                <label for="96"><input type="checkbox" id="Ultimate Frisbee"/>Ultimate Frisbee</label>
+                <label for="97"><input type="checkbox" id="Volleyball -  Jr. Boys"/>Volleyball -  Jr. Boys</label>
+                <label for="98"><input type="checkbox" id="Volleyball -  Sr. Boys"/>Volleyball -  Sr. Boys</label>
+                <label for="99"><input type="checkbox" id="Volleyball -  Jr. Girls"/>Volleyball -  Jr. Girls</label>
+                <label for="100"><input type="checkbox" id="Volleyball -  Sr. Girls"/>Volleyball -  Sr. Boys</label>
+                <label for="101"><input type="checkbox" id="Wellness Club"/>Wellness Club</label>
+                <label for="102"><input type="checkbox" id="Yearbook"/>Yearbook</label>
+                </div>
+            </div>
+            <div class="formBox">
+             <button id="btn" class="btn Add_To_Schedule" align= "right"> Add to Schedule! </button>
+            </div>
+            </div>
+            </form></center>
+        
+        <script>
+            var expanded = false;
+            function showCheckboxes() {
+                var checkboxes = document.getElementById("checkboxes");
+                if (!expanded) {
+                    checkboxes.style.display = "block";
+                    expanded = true;
+                }
+                
+                else{
+                    checkboxes.style.display= "none";
+                    expanded = false;
+                }
+            }
+        </script>
+        
+
+        
+    </body>
+    
+</html>
+    
+
+    
+    

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang = en>
+<head>
+    <meta charset= "utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Class Selection</title>
+    <link rel="stylesheet" type="text/css" href="AutoScheduler_CSS.css">    
+       <style>
+        .formBox{
+            padding: 0.5rem 2rem;
+        }
+           .msg {
+               color: white;
+           }
+    </style>
+    <script>
+        let data = [];
+        // example {id:1592304983049, title: 'Deadpool', year: 2015}
+        const addName = (ev)=>{
+            ev.preventDefault();  //to stop the form submitting
+            var checkboxes = document.querySelectorAll('input[type=checkbox]:checked');
+            var arr = [];
+             for(var j = 0; j < checkboxes.length; j++) {
+                 arr.push(checkboxes[j].value); 
+            }
+            let info = {
+                //id: Date.now(),
+                ClassName: document.getElementById('className').value,
+                Days : arr,
+                StartTime: document.getElementById('startTime').value,
+                EndTime: document.getElementById('endTime').value
+               
+                
+                
+            }
+            data.push(info);
+            document.forms[0].reset(); // to clear the form for the next entries
+            //document.querySelector('form').reset();
+
+            //for display purposes only
+            console.warn('added' , {data} );
+            let pre = document.querySelector('#msg pre');
+            pre.textContent = '\n' + JSON.stringify(data, '\t', 2);
+
+            //saving to localStorage
+            localStorage.setItem('MyClassSchedule', JSON.stringify(data) );
+        }
+        document.addEventListener('DOMContentLoaded', ()=>{
+            document.getElementById('btn').addEventListener('click', addName);
+        });
+    </script> 
+  
+</head>
+    <body>
+        
+        <h1 align= "left"> Class Selection </h1>
+        <div class="topnav">
+            <a class="Home" href="AutoScheduler_Home.html">Home</a>
+            <a href="Classes_Selection.html">Classes</a>
+            <a href="Clubs_Selection.html">Activities</a>
+            <a href="Events_Selection.html">Events</a>
+            <a href="Schedule.html">Schedule</a>
+        </div>
+         <form>
+        <div class="formBox">
+            <label for="className">Class Name</label>
+            <input type="text" id="className" placeholder="Enter Name"/>
+        </div>
+        <div class="formBox">
+             <p> Pick what days</p>
+            <input type="checkbox" name="type" value="Monday" />
+            <label for="type">Monday</label>
+            <input type="checkbox" name="type" value="Tuesday" />
+            <label for="type">Tuesday</label>
+            <input type="checkbox" name="type" value="Wednesday" />
+            <label for="type">Wednesday</label>
+            <input type="checkbox" name="type" value="Thursday"/> 
+            <label for="type">Thursday</label>
+            <input type="checkbox" name="type" value="Friday" /> 
+            <label for="type">Friday</label>
+        </div>
+        <div class="formBox">
+            <label for="startTime">Start Time(##:## AM/PM)</label>
+            <input type="time" id="startTime" placeholder="Enter Time"/>
+        </div>
+         <div class="formBox">
+            <label for="endTime">End Time(##:## AM/PM)</label>
+            <input type="time" id="endTime" placeholder="Enter Time"/>
+        </div>
+        <div class="formBox">
+            <button id="btn">Click to Add</button>
+        </div>
+        <div id="msg">
+            <pre></pre>
+        </div>
+    </form>
+  
+    
+    </body>
+</html>

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang = en>
+    <head>
+        
+        <meta charset= "utf-8">
+        <title>
+            Your Schedule 
+        </title>
+        <link rel="stylesheet" type="text/css" href="AutoScheduler_CSS.css">
+        <script>
+            function f1() {
+                     // var datavalues = localStorage.getItem('MyEventSchedule'); 
+                      var datavalues = JSON.parse(localStorage.getItem('MyEventSchedule'));
+                      //output1.innerHTML = datavalues.value.replace(/[()]/g, '');
+                      //alert(output1); 
+                      //document.write(datavalues);
+                      //alert(typeof datavalues); 
+                      const eventName = datavalues[0].EventName; 
+                      //alert(eventName); 
+                      //const className = datavalues[0].ClassName;
+                      const startTime = datavalues[0].StartTime;
+                      const endTime = datavalues[0].EndTime; 
+                      //alert(datavalues);
+                      //alert(className);
+                      alert(startTime); 
+                      alert(endTime); 
+                      //document.write("Class Name : " + className);
+                      document.write("<br>" + "From : " + startTime + " to " + endTime ); 
+                      //console.log(className, startTime);
+            }
+            function monday() {
+                 //var datavalues = localStorage.getItem('MyClassSchedule'); 
+                 var datavalues = JSON.parse(localStorage.getItem('MyClassSchedule'));
+                 var eventvalues = JSON.parse(localStorage.getItem('MyEventSchedule'));
+                
+                if(datavalues != null) {  
+                 for(var i = 0; i < datavalues.length; i++) {
+                     
+                     const days = datavalues[i].Days;
+                     for(var j = 0; j < days.length; j++) {
+                         if(days[j]=="Monday") {
+                             const className = datavalues[i].ClassName;
+                             const startTime = datavalues[i].StartTime;
+                             const endTime = datavalues[i].EndTime; 
+                            document.write("Class Name : " + className);
+                            document.write("<br>" + "From : " + startTime + " to " + endTime ); 
+                         }
+                     }
+                     document.write("<br>");
+                     document.write("<br>");
+                 }
+                }
+            if(eventvalues != null) {     
+                
+                 for(var k = 0; k < eventvalues.length; k++) {
+                     const days_e = eventvalues[k].Days;
+                     for(var l = 0; l < days_e.length; l++) {
+                         if(days_e[l]=="Monday") {
+                             const eventName = eventvalues[k].EventName;
+                             const startTime = eventvalues[k].StartTime;
+                             const endTime = eventvalues[k].EndTime; 
+                            document.write("Event Name : " + eventName);
+                            document.write("<br>" + "From : " + startTime + " to " + endTime ); 
+                         }
+                     }
+                     document.write("<br>");
+                     document.write("<br>");
+                 }
+            }
+                
+            }
+            function tuesday() {
+                 //var datavalues = localStorage.getItem('MyClassSchedule'); 
+                 var datavalues = JSON.parse(localStorage.getItem('MyClassSchedule'));
+                 var eventvalues = JSON.parse(localStorage.getItem('MyEventSchedule'));
+                if (datavalues != null) {
+                 for(var i = 0; i < datavalues.length; i++) {
+                     const days = datavalues[i].Days;
+                     for(var j = 0; j < days.length; j++) {
+                         if(days[j]=="Tuesday") {
+                             const className = datavalues[i].ClassName;
+                             const startTime = datavalues[i].StartTime;
+                             const endTime = datavalues[i].EndTime; 
+                            document.write("Class Name : " + className);
+                            document.write("<br>" + "From : " + startTime + " to " + endTime ); 
+                         }
+                     }
+                     document.write("<br>");
+                     document.write("<br>");
+                 }
+                }
+               if(eventvalues != null) {     
+                
+                 for(var k = 0; k < eventvalues.length; k++) {
+                     const days_e = eventvalues[k].Days; 
+                     for(var l = 0; l < days_e.length; l++) {
+                         if(days_e[l]=="Tuesday") {
+                             const eventName = eventvalues[k].EventName;
+                             const startTime = eventvalues[k].StartTime;
+                             const endTime = eventvalues[k].EndTime; 
+                            document.write("Event Name : " + eventName);
+                            document.write("<br>" + "From : " + startTime + " to " + endTime ); 
+                         }
+                     }
+                     document.write("<br>");
+                     document.write("<br>");
+                 }
+            }
+                
+            }
+             function wednesday() {
+                 //var datavalues = localStorage.getItem('MyClassSchedule'); 
+                 var datavalues = JSON.parse(localStorage.getItem('MyClassSchedule'));
+                 var eventvalues = JSON.parse(localStorage.getItem('MyEventSchedule'));
+                 
+                 if (datavalues != null) {
+                 for(var i = 0; i < datavalues.length; i++) {
+                     const days = datavalues[i].Days;
+                     for(var j = 0; j < days.length; j++) {
+                         if(days[j]=="Wednesday") {
+                             const className = datavalues[i].ClassName;
+                             const startTime = datavalues[i].StartTime;
+                             const endTime = datavalues[i].EndTime; 
+                            document.write("Class Name : " + className);
+                            document.write("<br>" + "From : " + startTime + " to " + endTime ); 
+                         }
+                     }
+                     document.write("<br>");
+                     document.write("<br>");
+                 }
+                 }
+                   if(eventvalues != null) {     
+                
+                 for(var k = 0; k < eventvalues.length; k++) {
+                     const days_e = eventvalues[k].Days;
+                     for(var l = 0; l < days_e.length; l++) {
+                         if(days_e[l]=="Wednesday") {
+                             const eventName = eventvalues[k].EventName;
+                             const startTime = eventvalues[k].StartTime;
+                             const endTime = eventvalues[k].EndTime; 
+                            document.write("Event Name : " + eventName);
+                            document.write("<br>" + "From : " + startTime + " to " + endTime ); 
+                         }
+                     }
+                     document.write("<br>");
+                     document.write("<br>");
+                 }
+            }
+                
+            }
+             function thursday() {
+                 //var datavalues = localStorage.getItem('MyClassSchedule'); 
+                 var datavalues = JSON.parse(localStorage.getItem('MyClassSchedule'));
+                 var eventvalues = JSON.parse(localStorage.getItem('MyEventSchedule'));
+                 if(datavalues != null) {
+                 for(var i = 0; i < datavalues.length; i++) {
+                     const days = datavalues[i].Days;
+                     for(var j = 0; j < days.length; j++) {
+                         if(days[j]=="Thursday") {
+                             const className = datavalues[i].ClassName;
+                             const startTime = datavalues[i].StartTime;
+                             const endTime = datavalues[i].EndTime; 
+                            document.write("Class Name : " + className);
+                            document.write("<br>" + "From : " + startTime + " to " + endTime ); 
+                         }
+                     }
+                     document.write("<br>");
+                     document.write("<br>");
+                 }
+                 }
+                   if(eventvalues != null) {     
+                
+                 for(var k = 0; k < eventvalues.length; k++) {
+                     const days_e = eventvalues[k].Days; 
+                     for(var l = 0; l < days_e.length; l++) {
+                         if(days_e[l]=="Thursday") {
+                             const eventName = eventvalues[k].EventName;
+                             const startTime = eventvalues[k].StartTime;
+                             const endTime = eventvalues[k].EndTime; 
+                            document.write("Event Name : " + eventName);
+                            document.write("<br>" + "From : " + startTime + " to " + endTime ); 
+                         }
+                     }
+                     document.write("<br>");
+                     document.write("<br>");
+                 }
+            }
+                
+            }
+             function friday() {
+                 //var datavalues = localStorage.getItem('MyClassSchedule'); 
+                 var datavalues = JSON.parse(localStorage.getItem('MyClassSchedule'));
+                 var eventvalues = JSON.parse(localStorage.getItem('MyEventSchedule'));
+                 if(datavalues != null) {
+                 for(var i = 0; i < datavalues.length; i++) {
+                     const days = datavalues[i].Days;
+                     for(var j = 0; j < days.length; j++) {
+                         if(days[j]=="Friday") {
+                             const className = datavalues[i].ClassName;
+                             const startTime = datavalues[i].StartTime;
+                             const endTime = datavalues[i].EndTime; 
+                            document.write("Class Name : " + className);
+                            document.write("<br>" + "From : " + startTime + " to " + endTime ); 
+                         }
+                     }
+                     document.write("<br>");
+                     document.write("<br>");
+                 }
+                 }
+                   if(eventvalues != null) {     
+                
+                 for(var k = 0; k < eventvalues.length; k++) {
+                     const days_e = eventvalues[k].Days;
+                     for(var l = 0; l < days_e.length; l++) {
+                         if(days_e[l]=="Friday") {
+                             const eventName = eventvalues[k].EventName;
+                             const startTime = eventvalues[k].StartTime;
+                             const endTime = eventvalues[k].EndTime; 
+                            document.write("Event Name : " + eventName);
+                            document.write("<br>" + "From : " + startTime + " to " + endTime ); 
+                         }
+                     }
+                     document.write("<br>");
+                     document.write("<br>");
+                 }
+            }
+                
+            }
+      
+            
+            //alert(words); 
+            //w3.displayObject("id01", datavalues);
+            //alert(datavalues);
+            
+           // alert(localStorage.getItem('MyClassSchedule'));
+           
+        </script>
+        
+    </head>
+    
+    
+    <body>
+        
+        <h1 align= "left"> Here's Your Schedule!</h1>
+        <div class="topnav">
+            <a class="Home" href="AutoScheduler_Home.html">Home</a>
+            <a href="Classes_Selection.html">Classes</a>
+            <a href="Clubs_Selection.html">Activities</a>
+            <a href="Events_Selection.html">Events</a>
+            <a href="Schedule.html">Schedule</a>
+        </div>
+        
+        <br/>
+        
+        <div>
+            <table style="width:100%" >
+                <tr>
+                    <th style="background-color: orangered">Monday</th>
+                    <th style="background-color: darkorange">Tuesday</th>
+                    <th style="background-color: yellow">Wednesday</th>
+                    <th style="background-color: limegreen">Thursday</th>
+                    <th style="background-color: dodgerblue">Friday</th>
+                </tr>
+                <tr>
+                    <td height=100 width =200 contenteditable="false"> <script>monday();</script></td>
+                    <td height=100 width =200 contenteditable="false"> <script>tuesday();</script></td>
+                    <td height=100 width =200 contenteditable="false"> <script>wednesday();</script></td>
+                    <td height=100 width =200 contenteditable="false"> <script>thursday();</script></td>
+                    <td height=100 width =200 contenteditable="false"> <script>friday();</script></td>
+                </tr>
+                <tr>
+                   <td height=100 width =200 contenteditable="false">  </td>
+                    <td height=100 width =200 contenteditable="false"> </td>
+                    <td height=100 width =200 contenteditable="false"> </td>
+                    <td height=100 width =200 contenteditable="false"> </td>
+                    <td height=100 width =200 contenteditable="false"> </td>
+                </tr>
+                
+                <tr>
+                    <td height=100 width =200 contenteditable="false">  </td>
+                    <td height=100 width =200 contenteditable="false"> </td>
+                    <td height=100 width =200 contenteditable="false"> </td>
+                    <td height=100 width =200 contenteditable="false"> </td>
+                    <td height=100 width =200 contenteditable="false"> </td>
+                </tr>
+                
+                <tr>
+                    <td height=100 width =200 contenteditable="false">  </td>
+                    <td height=100 width =200 contenteditable="false"> </td>
+                    <td height=100 width =200 contenteditable="false"> </td>
+                    <td height=100 width =200 contenteditable="false"> </td>
+                    <td height=100 width =200 contenteditable="false"> </td>
+                </tr>
+                
+                <tr>
+                    <td height=100 width =200 contenteditable="false">  </td>
+                    <td height=100 width =200 contenteditable="false"> </td>
+                    <td height=100 width =200 contenteditable="false"> </td>
+                    <td height=100 width =200 contenteditable="false"> </td>
+                    <td height=100 width =200 contenteditable="false"> </td>
+                </tr>
+                
+                 <tr>
+                    <td height=100 width =200 contenteditable="false">  </td>
+                    <td height=100 width =200 contenteditable="false"> </td>
+                    <td height=100 width =200 contenteditable="false"> </td>
+                    <td height=100 width =200 contenteditable="false"> </td>
+                    <td height=100 width =200 contenteditable="false"> </td>
+                </tr>
+                
+                <tr>
+                    <td height=100 width =200 contenteditable="false">  </td>
+                    <td height=100 width =200 contenteditable="false"> </td>
+                    <td height=100 width =200 contenteditable="false"> </td>
+                    <td height=100 width =200 contenteditable="false"> </td>
+                    <td height=100 width =200 contenteditable="false"> </td>
+                </tr>
+                
+                <tr>
+                    <td height=100 width =200 contenteditable="false">  </td>
+                    <td height=100 width =200 contenteditable="false"> </td>
+                    <td height=100 width =200 contenteditable="false"> </td>
+                    <td height=100 width =200 contenteditable="false"> </td>
+                    <td height=100 width =200 contenteditable="false"> </td>
+                </tr>
+                
+                <tr>
+                    <td height=100 width =200 contenteditable="false">  </td>
+                    <td height=100 width =200 contenteditable="false"> </td>
+                    <td height=100 width =200 contenteditable="false"> </td>
+                    <td height=100 width =200 contenteditable="false"> </td>
+                    <td height=100 width =200 contenteditable="false"> </td>
+                </tr>
+             
+            </table>
+        </div>
+    </body>
+</html>
